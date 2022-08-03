@@ -14,6 +14,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: `${this.firstname} ${this.lastname}`,
     trim: true,
+    unique: [true, 'The username is taken'],
   },
   email: {
     type: String,
@@ -22,7 +23,7 @@ const userSchema = new mongoose.Schema({
     lowercase: true,
     trim: true,
   },
-  dateOfBirth: {
+  DOB: {
     type: Date,
     default: Date.now(),
     required: [true, 'Please provide your date of birth'],
