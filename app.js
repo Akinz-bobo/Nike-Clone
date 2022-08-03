@@ -3,7 +3,6 @@ const userRouter = require('./routes/userRouter');
 const productRouter = require('./routes/productRouter');
 const appError = require('./util/appError');
 const globalErrorHandler = require('./controller/errorController');
-
 const app = express();
 app.use(express.json());
 // 3) ROUTES
