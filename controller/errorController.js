@@ -46,7 +46,10 @@ module.exports = (err, req, res, next) => {
   if (process.env.NODE_ENV === 'development') {
     sendErrorDev(err, res);
   }
-  if (process.env.NODE_ENV === 'production') {
+  const env = process.env.NODE_ENV;
+  const val = 'production';
+  console.log(env, val);
+  if (process.env.NODE_ENV.trim() === 'production') {
     console.log('Hey');
     let error = { ...err };
     if (error.name === 'CastError') {
